@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLG4MG_HFT_2021222.Repository.Data
+namespace BLG4MG_HFT_2021222.Repository
 {
-    class RentalDbContext:DbContext
+    public class RentalDbContext:DbContext
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Brand> Brands { get; set; }
