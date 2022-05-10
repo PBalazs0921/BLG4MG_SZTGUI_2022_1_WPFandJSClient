@@ -8,16 +8,27 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Models
 {
-    class Car
+    public class Car
     {
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
-        public string Brand { get; set; }
+        public string Model { get; set; }
+        public int BrandId { get; set; }
+        public virtual Brand Brand { get; set; }
+
+        public virtual ICollection<Rent> Rents { get; set; }
+
+        public virtual ICollection<Customer> Customers { get; set; }
 
         public int Cost { get; set; }
+
+        public Car()
+        {
+
+        }
 
 
     }

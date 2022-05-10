@@ -8,14 +8,18 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Models
 {
-    class Customer
+    public class Customer
     {
+        public Customer()
+        {
+        }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         public string Name { get; set; }
 
+        public virtual ICollection<Car> Cars { get; set; }
         public virtual ICollection<Rent> Rents { get; set; }
 
     }

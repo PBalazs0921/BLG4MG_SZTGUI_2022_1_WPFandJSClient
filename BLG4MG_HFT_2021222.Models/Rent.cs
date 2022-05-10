@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Models
 {
-    class Rent
+    public class Rent
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,9 +18,19 @@ namespace BLG4MG_HFT_2021222.Models
 
         public DateTime end { get; set; }
 
+        public int CarId { get; set; }
+
         public Car car { get; set; }
 
+
+        public int CustomerId { get; set; }
+
         public Customer customer { get; set; }
+
+        public Rent()
+        {
+
+        }
 
     }
 }
