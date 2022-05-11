@@ -36,22 +36,43 @@ namespace BLG4MG_HFT_2021222.Client
             switch (entity)
             {
                 case "Brand":
-                    var list = rest.Get<Brand>("Brand");
-                    foreach (var item in list)
+                    var brands = rest.Get<Brand>("Brand");
+                    foreach (var item in brands)
                     {
-                        Console.WriteLine(item);
+                        Console.WriteLine(item.BrandName);
                     }
+                    Console.ReadKey();
                     break;
 
                 case "Car":
-
+                    var Cars = rest.Get<Car>("Car");
+                    foreach (var item in Cars)
+                    {
+                        Console.WriteLine(item.Model);
+                    }
+                    Console.ReadKey();
                     break;
 
                 case "Customer":
-
+                    var customers = rest.Get<Customer>("Customer");
+                    foreach (var item in customers)
+                    {
+                        Console.WriteLine(item.Name);
+                    }
+                    Console.ReadKey();
                     break;
 
                 case "Rent":
+                    var rents = rest.Get<Rent>("Rent");
+                    foreach (var item in rents)
+                    {
+                        Console.WriteLine("Berlo neve:" + item.customer.Name);
+                        Console.WriteLine("Berles Kezdete:" + item.begin);
+                        Console.WriteLine("Berles vege:" + item.end);
+                        Console.WriteLine("Berelt auto:" + item.car.Model);
+                    }
+                    Console.ReadKey();
+
 
                     break;
             }
@@ -106,7 +127,7 @@ namespace BLG4MG_HFT_2021222.Client
 
         static void Main(string[] args)
         {
-            rest = new RestService("http://localhost:61417/", "car");
+            rest = new RestService("http://localhost:61417/", "brand");
 
             var CarSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Car"))
