@@ -15,6 +15,10 @@ namespace BLG4MG_HFT_2021222.Logic
         void Update(Rent item);
         void Delete(int id);
 
-
+        public IEnumerable<object> RentsByDay();
+        public IEnumerable<object> CarProfits();
+        public IEnumerable<object> RentTimeByCustomer();
+        public IEnumerable<object> HowManyBrandRentedByPersons(string model);
+        public IEnumerable<object> HowManyTimesRentedACar();
     }
 }

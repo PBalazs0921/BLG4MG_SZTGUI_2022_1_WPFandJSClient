@@ -25,7 +25,44 @@ namespace ES8NPY_HFT_2021222.Endpoint.Controllers
 
         //[HttpGet("{year}")]
 
-        //[HttpGet]
+
+        //NONCRUD 1
+        [HttpGet]
+        public IEnumerable<object> HowManyTimesRentedACar()
+        {
+            return this.rentingLogic.HowManyTimesRentedACar();
+        }
+
+
+        //NONCRUD 2
+        [HttpGet]
+        public IEnumerable<object> HowManyBrandRentedByPersons(string Name)
+        {
+            return this.rentingLogic.HowManyBrandRentedByPersons(Name);
+        }
+
+        //NONCRUD 3
+        [HttpGet]
+        public IEnumerable<object> RentsByDay()
+        {
+            return this.rentingLogic.RentsByDay();
+        }
+
+        //NONCRUD 4
+        [HttpGet]
+        public IEnumerable<object> RentTimeByCustomer()
+        {
+            return this.rentingLogic.RentTimeByCustomer();
+        }
+
+        //NONCRUD 5
+        [HttpGet]
+        public IEnumerable<object> CarProfits()
+        {
+            return this.rentingLogic.CarProfits();
+        }
+
+
 
     }
 }

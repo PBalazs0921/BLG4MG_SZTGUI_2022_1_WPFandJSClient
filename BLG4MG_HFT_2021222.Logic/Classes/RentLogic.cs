@@ -69,8 +69,9 @@ namespace BLG4MG_HFT_2021222.Logic
         public IEnumerable<object> HowManyBrandRentedByPersons(string model)
         {
             return from x in Repository.ReadAll()
+                   where x.car.Model.Equals(model)
                    group x by x.customer.Name into g
-                   select new { Name = g.Key, Count = g.Count(t=>t.car.Model==model) };
+                   select new { Name = g.Key, Count = g.Count() };
         }
 
 
@@ -91,15 +92,28 @@ namespace BLG4MG_HFT_2021222.Logic
         public IEnumerable<object> CarProfits()
         {
             return from x in Repository.ReadAll()
+
                    group x by x.car.Model into g
+                   let y = g.Select(t=>t.car.Cost)
                    select new 
                    {
                        CarModel = g.Key,
-                       TotalIncome=g.Sum(t=>t.car.Cost)
+                       TotalIncome=y.Sum()
                    };
         }
 
+        //Adott napon hány autót kölcsönöztek
 
+        public IEnumerable<object> RentsByDay()
+        {
+            return from x in Repository.ReadAll()
+                   group x by x.begin into g
+                   select new
+                   {
+                       Date = g.Key,
+                       RentsToday = g.Count()
+                   };
+        }
 
     }
 }
