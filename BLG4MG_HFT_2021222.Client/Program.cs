@@ -159,7 +159,7 @@ namespace BLG4MG_HFT_2021222.Client
                     Console.Write($"Enter the new name for " + ca.Model);
                     string nameca = Console.ReadLine();
                     ca.Model = nameca;
-                    rest.Put(ca, "brand");
+                    rest.Put(ca, "car");
                     break;
 
 
@@ -223,7 +223,6 @@ namespace BLG4MG_HFT_2021222.Client
             rest = new RestService("http://localhost:61417/", "brand");
 
 
-            Console.ReadKey();
             var CarSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Car"))
                 .Add("Create", () => Create("Car"))
@@ -232,10 +231,10 @@ namespace BLG4MG_HFT_2021222.Client
                 .Add("Exit", ConsoleMenu.Close);
 
             var CustomerSubMenu = new ConsoleMenu(args, level: 1)
-                .Add("List", () => List("customer"))
-                .Add("Create", () => Create("customer"))
-                .Add("Delete", () => Delete("customer"))
-                .Add("Update", () => Update("customer"))
+                .Add("List", () => List("Customer"))
+                .Add("Create", () => Create("Customer"))
+                .Add("Delete", () => Delete("Customer"))
+                .Add("Update", () => Update("Customer"))
                 .Add("Exit", ConsoleMenu.Close);
 
             var BrandSubMenu = new ConsoleMenu(args, level: 1)

@@ -75,7 +75,7 @@ namespace BLG4MG_HFT_2021222.Repository
             {
                 new Car(){ id=1, Model="A4", BrandId=1},
                 new Car(){ id=2, Model="SF90 Spider", BrandId=2},
-                new Car(){ id=3, Model="    ", BrandId=4},
+                new Car(){ id=3, Model="sport", BrandId=4},
                 new Car(){ id=4, Model="E36", BrandId=4},
 
             };
