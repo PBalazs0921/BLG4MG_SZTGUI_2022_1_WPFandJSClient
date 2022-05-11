@@ -21,7 +21,7 @@ namespace BLG4MG_HFT_2021222.Client
                     break;
 
                 case "Car":
-                 
+                 //NEED TO WRITE
                     break;
 
                 case "Customer":
