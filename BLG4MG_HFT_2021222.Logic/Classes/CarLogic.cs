@@ -66,7 +66,7 @@ namespace BLG4MG_HFT_2021222.Logic
         {
             return from x in Repository.ReadAll()
                    group x by x.Brand.BrandName into g
-                   select new
+                   select new 
                    {
                        Brand = g.Key,
                        CarNum = g.Count()
