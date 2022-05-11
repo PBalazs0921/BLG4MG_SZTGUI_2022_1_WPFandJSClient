@@ -21,19 +21,7 @@ namespace BLG4MG_HFT_2021222.Logic
         //CRUD
         public void Create(Rent item)
         {
-            if (item.CarId == null)
-            {
-                throw new ArgumentException("Car ID field must be filled");
-            }
-            if (item.CustomerId == null)
-            {
-                throw new ArgumentException("Customer must be entered");
-            }
-            if (item.begin == null)
-            {
-                throw new ArgumentException("Must be a begining date");
-            }
-
+            this.Repository.Create(item);
 
         }
 
@@ -65,6 +53,10 @@ namespace BLG4MG_HFT_2021222.Logic
         {
             this.Repository.Delete(id);
         }
+
+        //NON CRUD
+
+        //How many days did the user used a rented car
 
     }
 }

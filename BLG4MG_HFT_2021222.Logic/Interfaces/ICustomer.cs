@@ -14,5 +14,6 @@ namespace BLG4MG_HFT_2021222.Logic
         IQueryable<Customer> ReadAll();
         void Update(Customer item);
         void Delete(int id);
+        public IEnumerable<object> RentTimeByCustomer();
     }
 }

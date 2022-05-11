@@ -15,13 +15,24 @@ namespace BLG4MG_HFT_2021222.Client
             switch (entity)
             {
                 case "Brand":
-                    Console.Write("Enter brand name: ");
+                    Console.WriteLine("Enter brand name: ");
                     string name = Console.ReadLine();
                     rest.Post(new Brand() { BrandName = name }, "brand");
                     break;
 
                 case "Car":
-                 //NEED TO WRITE
+                    Console.WriteLine("Enter car name: ");
+                    string namecar = Console.ReadLine();
+
+                    Console.Write("Enter car cost: ");
+                    int cost = int.Parse(Console.ReadLine());
+
+                    Console.Write("Enter car brand: ");
+                    string brand = Console.ReadLine().ToLower();
+                    Brand b = rest.Get<Brand>("brand").Where(x => x.BrandName.ToLower() == brand).FirstOrDefault();
+
+                    Car car = new Car() { Model = namecar, Cost = cost, BrandId = b.BrandId };
+                    rest.Post(car, "car");
                     break;
 
                 case "Customer":

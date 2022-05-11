@@ -59,5 +59,15 @@ namespace BLG4MG_HFT_2021222.Logic
             this.Repository.Delete(id);
         }
 
+        public IEnumerable<object> RentTimeByCustomer()
+        {
+            return from x in Repository.ReadAll()
+                   group x by x.Name into g
+                   select new
+                   {
+                       name = g.Key,
+                   };
+        }
+
     }
 }

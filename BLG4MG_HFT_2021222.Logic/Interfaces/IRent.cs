@@ -14,5 +14,7 @@ namespace BLG4MG_HFT_2021222.Logic
         IQueryable<Rent> ReadAll();
         void Update(Rent item);
         void Delete(int id);
+
+
     }
 }
