@@ -93,10 +93,10 @@ namespace BLG4MG_HFT_2021222.Client
                     var rents = rest.Get<Rent>("Rent");
                     foreach (var item in rents)
                     {
-                        Console.WriteLine("Berlo neve:" + item.customer.Name);
-                        Console.WriteLine("Berles Kezdete:" + item.begin);
-                        Console.WriteLine("Berles vege:" + item.end);
-                        Console.WriteLine("Berelt auto:" + item.car.Model);
+                        Console.WriteLine("Customer name:" + item.customer.Name);
+                        Console.WriteLine("Start of rent:" + item.begin);
+                        Console.WriteLine("End of Rent" + item.end);
+                        Console.WriteLine("Rented car: "+rest.Get<Car>(item.CarId, "car").Model);
                     }
                     Console.ReadKey();
 
@@ -222,6 +222,8 @@ namespace BLG4MG_HFT_2021222.Client
         {
             rest = new RestService("http://localhost:61417/", "brand");
 
+
+            Console.ReadKey();
             var CarSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Car"))
                 .Add("Create", () => Create("Car"))

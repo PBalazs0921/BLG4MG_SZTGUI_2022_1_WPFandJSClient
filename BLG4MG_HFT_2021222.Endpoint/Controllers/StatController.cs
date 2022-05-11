@@ -24,11 +24,6 @@ namespace ES8NPY_HFT_2021222.Endpoint.Controllers
         }
 
         //[HttpGet("{year}")]
-        [HttpGet]
-        public IEnumerable<object> HowManyTimesRented()
-        {
-            return this.carLogic.HowManyTimesRented();
-        }
 
         //[HttpGet]
 

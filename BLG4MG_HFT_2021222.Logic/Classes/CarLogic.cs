@@ -65,15 +65,14 @@ namespace BLG4MG_HFT_2021222.Logic
 
 
         
-        public IEnumerable<object> HowManyTimesRented()
-        {
-            return from x in Repository.ReadAll()
-                   group x by x.Brand.BrandName into g
-                   select new { Id = g.Key, Count = g.Count() };
 
-        }
 
-         
+
+
+
+
+
+
 
     }
 }

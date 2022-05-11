@@ -93,10 +93,10 @@ namespace BLG4MG_HFT_2021222.Repository
 
             Rent[] Rents = new Rent[]
             {
-                new Rent(){id=1, begin=new DateTime(2021, 04, 23),end=new DateTime(2021,05,01),CustomerId=1},
-                new Rent(){id=2, begin=new DateTime(2021, 04, 22),end=new DateTime(2021,04,29),CustomerId=1},
-                new Rent(){id=3, begin=new DateTime(2021, 05, 23),end=new DateTime(2021,05,24),CustomerId=1},
-                new Rent(){id=4, begin=new DateTime(2021, 01, 01),end=new DateTime(2021,01,02),CustomerId=1},
+                new Rent(){id=1, begin=new DateTime(2021, 04, 23),end=new DateTime(2021,05,01),CustomerId=1, CarId=3},
+                new Rent(){id=2, begin=new DateTime(2021, 04, 22),end=new DateTime(2021,04,29),CustomerId=1, CarId=2},
+                new Rent(){id=3, begin=new DateTime(2021, 05, 23),end=new DateTime(2021,05,24),CustomerId=1, CarId=4},
+                new Rent(){id=4, begin=new DateTime(2021, 01, 01),end=new DateTime(2021,01,02),CustomerId=1, CarId=4, },
             };
             modelBuilder.Entity<Rent>().HasData(Rents);
 
