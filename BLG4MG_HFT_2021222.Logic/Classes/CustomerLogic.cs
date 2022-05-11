@@ -8,22 +8,21 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    class BrandLogic : IBrand
+    class CustomerLogic : ICustomer
     {
-        IRepository<Brand> Repository;
+        IRepository<Customer> Repository;
 
-        public BrandLogic(IRepository<Brand> repository)
+        public CustomerLogic(IRepository<Customer> repository)
         {
             this.Repository = repository;
         }
 
-
-        //CRUD 
-        public void Create(Brand item)
+        //CRUD
+        public void Create(Customer item)
         {
-            if (item.BrandName == null)
+            if (item.Name == null)
             {
-                throw new ArgumentException("Brand name cant be empty");
+                throw new ArgumentException("Customer name cant be empty");
             }
             else
             {
@@ -32,37 +31,33 @@ namespace BLG4MG_HFT_2021222.Logic
         }
 
 
-
-        public Brand Read(int id)
+        public Customer Read(int id)
         {
-            var Brand = this.Repository.Read(id);
-            if (Brand == null)
+            var read = this.Repository.Read(id);
+            if (read == null)
             {
-                throw new ArgumentException("Brand does not exits in database");
+                throw new ArgumentException("Customer does not exist in database");
             }
             else
             {
-                return Brand;
+                return read;
             }
         }
 
-        public IQueryable<Brand> ReadAll()
+        public IQueryable<Customer> ReadAll()
         {
             return this.Repository.ReadAll();
         }
 
-        public void Update(Brand item)
+        public void Update(Customer item)
         {
             this.Repository.Update(item);
         }
-
 
         public void Delete(int id)
         {
             this.Repository.Delete(id);
         }
-        //NON-CRUD
-
 
     }
 }

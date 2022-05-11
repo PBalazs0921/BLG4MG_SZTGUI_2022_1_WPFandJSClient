@@ -8,22 +8,21 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    class BrandLogic : IBrand
+    class CarLogic : ICar
     {
-        IRepository<Brand> Repository;
-
-        public BrandLogic(IRepository<Brand> repository)
+        IRepository<Car> Repository;
+        public CarLogic(IRepository<Car> repo)
         {
-            this.Repository = repository;
+            this.Repository = repo;
         }
 
 
-        //CRUD 
-        public void Create(Brand item)
+        //CRUD
+        public void Create(Car item)
         {
-            if (item.BrandName == null)
+            if (item.Model == null)
             {
-                throw new ArgumentException("Brand name cant be empty");
+                throw new ArgumentException("Model name cant be empty");
             }
             else
             {
@@ -32,26 +31,25 @@ namespace BLG4MG_HFT_2021222.Logic
         }
 
 
-
-        public Brand Read(int id)
+        public Car Read(int id)
         {
-            var Brand = this.Repository.Read(id);
-            if (Brand == null)
+            var read = this.Repository.Read(id);
+            if (read == null)
             {
-                throw new ArgumentException("Brand does not exits in database");
+                throw new ArgumentException("Car does not exist in database");
             }
             else
             {
-                return Brand;
+                return read;
             }
         }
 
-        public IQueryable<Brand> ReadAll()
+        public IQueryable<Car> ReadAll()
         {
             return this.Repository.ReadAll();
         }
 
-        public void Update(Brand item)
+        public void Update(Car item)
         {
             this.Repository.Update(item);
         }
@@ -61,8 +59,5 @@ namespace BLG4MG_HFT_2021222.Logic
         {
             this.Repository.Delete(id);
         }
-        //NON-CRUD
-
-
     }
 }

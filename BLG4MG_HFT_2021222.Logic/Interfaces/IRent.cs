@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    interface IBrand
+    interface IRent
     {
-        void Create(Brand item);
-        Brand Read(int id);
-        IQueryable<Brand> ReadAll();
-        void Update(Brand item);
+        void Create(Rent item);
+        Rent Read(int id);
+        IQueryable<Rent> ReadAll();
+        void Update(Rent item);
         void Delete(int id);
     }
 }

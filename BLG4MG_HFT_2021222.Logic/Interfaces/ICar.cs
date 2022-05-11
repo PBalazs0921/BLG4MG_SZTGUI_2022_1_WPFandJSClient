@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    interface IBrand
+    interface ICar
     {
-        void Create(Brand item);
-        Brand Read(int id);
-        IQueryable<Brand> ReadAll();
-        void Update(Brand item);
+        void Create(Car item);
+        Car Read(int id);
+        IQueryable<Car> ReadAll();
+        void Update(Car item);
         void Delete(int id);
+
     }
 }
