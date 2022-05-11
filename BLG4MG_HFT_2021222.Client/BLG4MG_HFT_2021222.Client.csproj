@@ -5,6 +5,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="ConsoleMenu-simple" Version="2.4.3" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.8" />
+	</ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\BLG4MG_HFT_2021222.Models\BLG4MG_HFT_2021222.Models.csproj" />
   </ItemGroup>
