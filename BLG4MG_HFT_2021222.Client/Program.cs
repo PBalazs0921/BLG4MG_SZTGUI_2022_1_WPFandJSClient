@@ -1,12 +1,16 @@
-﻿using ConsoleTools;
+﻿using BLG4MG_HFT_2021222.Models;
+using ConsoleTools;
 using System;
 
 namespace BLG4MG_HFT_2021222.Client
 {
     class Program
     {
+        static RestService rest;
         static void Create(string entity)
         {
+
+
             switch (entity)
             {
                 case "Brand": 
@@ -32,7 +36,11 @@ namespace BLG4MG_HFT_2021222.Client
             switch (entity)
             {
                 case "Brand":
-
+                    var list = rest.Get<Brand>("Brand");
+                    foreach (var item in list)
+                    {
+                        Console.WriteLine(item);
+                    }
                     break;
 
                 case "Car":
@@ -98,7 +106,7 @@ namespace BLG4MG_HFT_2021222.Client
 
         static void Main(string[] args)
         {
-
+            rest = new RestService("http://localhost:61417/", "car");
 
             var CarSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Car"))

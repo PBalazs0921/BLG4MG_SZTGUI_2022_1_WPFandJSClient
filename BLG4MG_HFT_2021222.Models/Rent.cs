@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Models
@@ -20,12 +21,13 @@ namespace BLG4MG_HFT_2021222.Models
 
         public int CarId { get; set; }
 
-        public Car car { get; set; }
+        [JsonIgnore]
+        public virtual Car car { get; set; }
 
 
         public int CustomerId { get; set; }
 
-        public Customer customer { get; set; }
+        public virtual Customer customer { get; set; }
 
         public Rent()
         {

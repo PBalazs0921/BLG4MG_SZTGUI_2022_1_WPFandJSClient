@@ -14,7 +14,7 @@ namespace BLG4MG_HFT_2021222.Repository
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Rent> Rents { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        protected RentalDbContext()
+        public RentalDbContext()
         {
             this.Database.EnsureCreated();
         }
@@ -67,7 +67,7 @@ namespace BLG4MG_HFT_2021222.Repository
             Customer[] Customers = new Customer[20];
             for(int i = 0; i < 20; i++)
             {
-                Customers[i] = new Customer() { id = i, Name = "Customer " + i };
+                Customers[i] = new Customer() { id = i+1, Name = "Customer " + i+1 };
             }
             modelBuilder.Entity<Customer>().HasData(Customers);
 

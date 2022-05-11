@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Models
@@ -19,6 +20,7 @@ namespace BLG4MG_HFT_2021222.Models
         public int BrandId { get; set; }
         public virtual Brand Brand { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Rent> Rents { get; set; }
 
         public virtual ICollection<Customer> Customers { get; set; }
