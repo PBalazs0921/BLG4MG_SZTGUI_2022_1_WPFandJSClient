@@ -1,6 +1,7 @@
 ﻿using BLG4MG_HFT_2021222.Models;
 using ConsoleTools;
 using System;
+using System.Linq;
 
 namespace BLG4MG_HFT_2021222.Client
 {
@@ -13,8 +14,10 @@ namespace BLG4MG_HFT_2021222.Client
 
             switch (entity)
             {
-                case "Brand": 
-                    
+                case "Brand":
+                    Console.Write("Enter brand name: ");
+                    string name = Console.ReadLine();
+                    rest.Post(new Brand() { BrandName = name }, "brand");
                     break;
 
                 case "Car":
@@ -22,10 +25,23 @@ namespace BLG4MG_HFT_2021222.Client
                     break;
 
                 case "Customer":
-
+                    Console.Write("Enter Customer name: ");
+                    string namec = Console.ReadLine();
+                    var renter = new Customer() { Name = namec };
+                    rest.Post(renter, "customer");
                     break;
 
                 case "Rent":
+                    Console.Write("Enter customer's name: ");
+                    string namer = Console.ReadLine();
+                    var renterid = rest.Get<Customer>("renter").Where(x => x.Name == namer).Select(x => x.id).FirstOrDefault();
+
+                    Console.Write("Enter car name: ");
+                    string model = Console.ReadLine();
+                    var modelid = rest.Get<Car>("car").Where(x => x.Model == model).Select(x => x.id).FirstOrDefault();
+
+                    Rent renting = new Rent() { CarId = modelid, CustomerId = renterid, begin = DateTime.Today };
+                    rest.Post(renting, "rental");
 
                     break;
             }
@@ -149,7 +165,43 @@ namespace BLG4MG_HFT_2021222.Client
                 case "Rent":
                     Console.WriteLine("Enter the ID of the rent that you want to edit: ");
                     id = int.Parse(Console.ReadLine());
-                    Console.WriteLine("What part of this rent entry do you want to edit?");
+                    Rent RentChange = rest.Get<Rent>(id, "rental");
+                    Console.WriteLine("What part of this rent entry do you want to edit? Write the corresponding number: 1, Renter 2,Car 3,Start date 4,End date");
+                    int choice = int.Parse(Console.ReadLine());
+                    switch (choice)
+                    {
+                        case 1:
+                            Customer renter = rest.Get<Customer>(RentChange.id, "customer");
+                            Console.Write($"Who do you want the new customer on this rent to be?");
+                            string nameofc = Console.ReadLine();
+                            int renterid = rest.Get<Customer>("customer").Where(x => x.Name == nameofc).Select(x => x.id).FirstOrDefault();
+                            RentChange.id = renterid;
+                            break;
+                        case 2:
+                            Car rentcar = rest.Get<Car>(RentChange.id, "car");
+                            Console.Write($"What do you want the new car to be?");
+                            string carname = Console.ReadLine();
+                            int carid = rest.Get<Car>("car").Where(x => x.Model == carname).Select(x => x.id).FirstOrDefault();
+                            RentChange.id = carid;
+                            break;
+
+                        case 3:
+                            Console.Write($"New rent start date [old: {RentChange.begin}](format: 2022*05*01): ");
+                            string[] date = Console.ReadLine().Split('*');
+                            DateTime dt = new DateTime(int.Parse(date[0]), int.Parse(date[1]), int.Parse(date[2]));
+                            RentChange.begin = dt;
+                            break;
+                        case 4:
+                            Console.Write($"New rent end date [old: {RentChange.begin}](format: 2022*05*01): ");
+                            string[] date2 = Console.ReadLine().Split('*');
+                            DateTime dt2 = new DateTime(int.Parse(date2[0]), int.Parse(date2[1]), int.Parse(date2[2]));
+                            RentChange.begin = dt2;
+                            break;
+                        default:
+                            break;
+                    }
+                    rest.Put(RentChange, "rental");
+                    Console.ReadKey();
                     break;
             }
         }

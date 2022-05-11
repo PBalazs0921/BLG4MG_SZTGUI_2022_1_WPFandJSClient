@@ -26,5 +26,7 @@ namespace BLG4MG_HFT_2021222.Models
         [JsonIgnore]
         public virtual ICollection<Rent> Rents { get; set; }
 
+        
+
     }
 }
