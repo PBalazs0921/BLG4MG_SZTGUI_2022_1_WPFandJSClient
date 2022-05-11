@@ -29,10 +29,8 @@ namespace ES8NPY_HFT_2021222.Endpoint.Controllers
         {
             return this.carLogic.HowManyTimesRented();
         }
-        [HttpGet]
-        public IEnumerable<object> RentTimeByCustomer()
-        {
-            return this.renterLogic.RentTimeByCustomer();
-        }
+
+        //[HttpGet]
+
     }
 }

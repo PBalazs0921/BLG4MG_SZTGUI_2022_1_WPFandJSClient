@@ -56,7 +56,7 @@ namespace BLG4MG_HFT_2021222.Logic
 
         //NON CRUD
 
-        //How many days did the user used a rented car
+
 
     }
 }
