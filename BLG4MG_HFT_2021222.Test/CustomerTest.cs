@@ -31,11 +31,18 @@ namespace BLG4MG_HFT_2021222.Test
         public void CreateRenterTest()
         {
             //ACT
-            var customer = new Customer() { id = 3, Name = "Teszt 2 " };
+            var customer = new Customer() { id =1, Name = "Teszt 2 " };
             logic.Create(customer);
 
             //ASSERT
             mockCustomerRepo.Verify(r => r.Create(customer), Times.Once());
+        }
+
+        [Test]
+        public void TestReadAll()
+        {
+            var test = logic.ReadAll();
+            Assert.That(test.Count(), Is.EqualTo(1));
         }
     }
 }

@@ -25,7 +25,7 @@ namespace BLG4MG_HFT_2021222.Test
             mockCarRepo.Setup(x => x.ReadAll()).Returns(new List<Car>()
             {
                 new Car() { BrandId=1,Model="E46",Cost=1000,id=1,Brand=BMW},
-                new Car() { BrandId=1,Model="E46",Cost=1000,id=1,Brand=BMW},
+                new Car() { BrandId=1,Model="E46",Cost=1000,id=2,Brand=BMW},
         }.AsQueryable());
             logic = new CarLogic(mockCarRepo.Object);
         }
