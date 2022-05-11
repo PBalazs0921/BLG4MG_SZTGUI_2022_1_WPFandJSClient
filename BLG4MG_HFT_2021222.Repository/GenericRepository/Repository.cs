@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Repository
 {
-    abstract class Repository<T>: IRepository<T> where T: class
+    public abstract class Repository<T>: IRepository<T> where T: class
     {
         protected RentalDbContext context;
 

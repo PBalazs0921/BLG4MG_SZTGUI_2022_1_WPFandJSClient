@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    class RentLogic : IRent
+    public class RentLogic : IRent
     {
         IRepository<Rent> Repository;
 

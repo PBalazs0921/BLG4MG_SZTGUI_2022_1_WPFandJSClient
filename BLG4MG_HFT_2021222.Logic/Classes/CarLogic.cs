@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    class CarLogic : ICar
+    public class CarLogic : ICar
     {
         IRepository<Car> Repository;
         public CarLogic(IRepository<Car> repo)

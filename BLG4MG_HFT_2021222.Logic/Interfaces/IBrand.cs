@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    interface IBrand
+    public interface IBrand
     {
         void Create(Brand item);
         Brand Read(int id);

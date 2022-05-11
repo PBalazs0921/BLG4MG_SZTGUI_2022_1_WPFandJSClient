@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Repository
 {
-    class BrandRepository : Repository<Brand>, IRepository<Brand>
+    public class BrandRepository : Repository<Brand>, IRepository<Brand>
     {
         public BrandRepository(RentalDbContext context) : base(context)
         {

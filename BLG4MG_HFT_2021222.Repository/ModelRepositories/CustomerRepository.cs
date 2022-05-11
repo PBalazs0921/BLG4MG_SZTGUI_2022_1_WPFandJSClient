@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLG4MG_HFT_2021222.Repository.ModelRepositories
+namespace BLG4MG_HFT_2021222.Repository
 {
-    class CustomerRepository : Repository<Customer>, IRepository<Customer>
+    public class CustomerRepository : Repository<Customer>, IRepository<Customer>
     {
         public CustomerRepository(RentalDbContext context) : base(context)
         {

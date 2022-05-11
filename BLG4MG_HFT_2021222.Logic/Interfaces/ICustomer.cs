@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    interface ICustomer
+    public interface ICustomer
     {
         void Create(Customer item);
         Customer Read(int id);

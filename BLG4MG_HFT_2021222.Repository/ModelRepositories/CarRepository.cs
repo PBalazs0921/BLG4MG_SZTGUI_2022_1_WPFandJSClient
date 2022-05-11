@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLG4MG_HFT_2021222.Repository.ModelRepositories
+namespace BLG4MG_HFT_2021222.Repository
 {
-    class CarRepository : Repository<Car>, IRepository<Car>
+    public class CarRepository : Repository<Car>, IRepository<Car>
     {
         public CarRepository(RentalDbContext context) : base(context)
         {

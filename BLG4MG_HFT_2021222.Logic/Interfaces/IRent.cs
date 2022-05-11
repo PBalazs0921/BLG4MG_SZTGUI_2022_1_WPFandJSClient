@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    interface IRent
+    public interface IRent
     {
         void Create(Rent item);
         Rent Read(int id);

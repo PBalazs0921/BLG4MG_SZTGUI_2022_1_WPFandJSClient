@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Logic
 {
-    class CustomerLogic : ICustomer
+    public class CustomerLogic : ICustomer
     {
         IRepository<Customer> Repository;
 

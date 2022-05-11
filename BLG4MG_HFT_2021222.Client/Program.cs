@@ -10,11 +10,11 @@ namespace BLG4MG_HFT_2021222.Client
             switch (entity)
             {
                 case "Brand": 
-
+                    
                     break;
 
                 case "Car":
-
+                 
                     break;
 
                 case "Customer":
