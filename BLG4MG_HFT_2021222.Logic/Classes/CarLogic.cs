@@ -62,9 +62,18 @@ namespace BLG4MG_HFT_2021222.Logic
 
 
         //NON CRUD
+        public IEnumerable<object> HowManyModelsPerBrand()
+        {
+            return from x in Repository.ReadAll()
+                   group x by x.Brand.BrandName into g
+                   select new
+                   {
+                       Brand = g.Key,
+                       CarNum = g.Count()
+                   };
+        }
 
 
-        
 
 
 

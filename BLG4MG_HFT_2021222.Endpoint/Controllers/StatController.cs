@@ -57,9 +57,9 @@ namespace ES8NPY_HFT_2021222.Endpoint.Controllers
 
         //NONCRUD 5
         [HttpGet]
-        public IEnumerable<object> CarProfits()
+        public IEnumerable<object> HowManyModelsPerBrand()
         {
-            return this.rentingLogic.CarProfits();
+            return this.carLogic.HowManyModelsPerBrand();
         }
 
 

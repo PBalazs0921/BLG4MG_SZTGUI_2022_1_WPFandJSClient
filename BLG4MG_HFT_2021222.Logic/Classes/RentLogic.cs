@@ -88,19 +88,6 @@ namespace BLG4MG_HFT_2021222.Logic
                    };
         }
 
-        //Egy autó mennyi pénzt hozott
-        public IEnumerable<object> CarProfits()
-        {
-            return from x in Repository.ReadAll()
-
-                   group x by x.car.Model into g
-                   let y = g.Select(t=>t.car.Cost)
-                   select new 
-                   {
-                       CarModel = g.Key,
-                       TotalIncome=y.Sum()
-                   };
-        }
 
         //Adott napon hány autót kölcsönöztek
 
