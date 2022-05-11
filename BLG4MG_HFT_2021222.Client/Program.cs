@@ -81,22 +81,30 @@ namespace BLG4MG_HFT_2021222.Client
 
         static void Delete(string entity)
         {
+            
+
+            Console.WriteLine("Enter a(n) " + entity + " id to delete:");
+            int deleteid = int.Parse(Console.ReadLine());
+
+
             switch (entity)
             {
                 case "Brand":
-
+                    rest.Delete(deleteid,entity.ToLower());
                     break;
 
                 case "Car":
+                    rest.Delete(deleteid, entity.ToLower());
 
                     break;
 
                 case "Customer":
+                    rest.Delete(deleteid, entity.ToLower());
 
                     break;
 
                 case "Rent":
-
+                    rest.Delete(deleteid, entity.ToLower());
                     break;
             }
 
@@ -104,22 +112,44 @@ namespace BLG4MG_HFT_2021222.Client
         
         static void Update(string entity)
         {
+            int id;
             switch (entity)
             {
                 case "Brand":
-
+                    Console.Write("Enter brand's id to update: ");
+                    id = int.Parse(Console.ReadLine());
+                    Brand b = rest.Get<Brand>(id, "brand");
+                    Console.Write($"Enter the new name for "+b.BrandName);
+                    string name = Console.ReadLine();
+                    b.BrandName = name;
+                    rest.Put(b, "brand");
                     break;
 
                 case "Car":
-
+                    Console.Write("Enter Car's id to update: ");
+                    id = int.Parse(Console.ReadLine());
+                    Car ca = rest.Get<Car>(id, "car");
+                    Console.Write($"Enter the new name for " + ca.Model);
+                    string nameca = Console.ReadLine();
+                    ca.Model = nameca;
+                    rest.Put(ca, "brand");
                     break;
 
-                case "Customer":
 
+                case "Customer":
+                    Console.Write("Enter Customer's id to update: ");
+                    id = int.Parse(Console.ReadLine());
+                    Customer c = rest.Get<Customer>(id, "customer");
+                    Console.Write($"New name [old: {c.Name}]: ");
+                    string namec = Console.ReadLine();
+                    c.Name = namec;
+                    rest.Put(c, "renter");
                     break;
 
                 case "Rent":
-
+                    Console.WriteLine("Enter the ID of the rent that you want to edit: ");
+                    id = int.Parse(Console.ReadLine());
+                    Console.WriteLine("What part of this rent entry do you want to edit?");
                     break;
             }
         }

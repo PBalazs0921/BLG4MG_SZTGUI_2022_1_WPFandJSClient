@@ -16,7 +16,6 @@ namespace BLG4MG_HFT_2021222.Models
 
         public string BrandName { get; set; }
 
-        public string Contact { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<Car> Cars { get; set; }
