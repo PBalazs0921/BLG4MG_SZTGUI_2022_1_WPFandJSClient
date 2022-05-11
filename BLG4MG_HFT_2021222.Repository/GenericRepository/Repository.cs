@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BLG4MG_HFT_2021222.Repository
 {
-    abstract class RentalRepository<T>: IRepository<T> where T: class
+    abstract class Repository<T>: IRepository<T> where T: class
     {
         protected RentalDbContext context;
 
-        public RentalRepository(RentalDbContext context)
+        public Repository(RentalDbContext context)
         {
             this.context = context;
         }
