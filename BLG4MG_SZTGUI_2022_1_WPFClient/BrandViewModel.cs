@@ -59,14 +59,13 @@ namespace BLG4MG_SZTGUI_2022_1_WPFClient
             {
 
 
-                Brands = new RestCollection<Brand>("http://localhost:61417/", "brand");
+                Brands = new RestCollection<Brand>("http://localhost:61417/", "brand", "hub");
 
                 CreateBrand = new RelayCommand(() =>
                 {
                     Brands.Add(new Brand()
                     {
-                        BrandId = 69,
-                        BrandName = "sajt"
+                        BrandName = selectedBrand.BrandName
                     });
                 }
                 );
@@ -85,7 +84,7 @@ namespace BLG4MG_SZTGUI_2022_1_WPFClient
                     return SelectedBrand != null;
                 });
 
-
+                selectedBrand = new Brand();
             }
         }
 

@@ -45,6 +45,8 @@ namespace BLG4MG_HFT_2021222.Endpoint
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BLG4MG_HFT_2021222.Endpoint", Version = "v1" });
             });
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +66,7 @@ namespace BLG4MG_HFT_2021222.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }
