@@ -12,7 +12,7 @@
     <Grid>
         <Button Content="Brand" HorizontalAlignment="Left" Height="65" Margin="47,105,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click"/>
 
-        <Button Content="Car" HorizontalAlignment="Left" Height="65" Margin="263,212,0,0" VerticalAlignment="Top" Width="87"/>
+        <Button Content="Car" HorizontalAlignment="Left" Height="65" Margin="263,212,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_1"/>
         <Button Content="Customer" HorizontalAlignment="Left" Height="64" Margin="495,138,0,0" VerticalAlignment="Top" Width="87"/>
         <Button Content="Rent" HorizontalAlignment="Left" Height="65" Margin="312,100,0,0" VerticalAlignment="Top" Width="88"/>
     </Grid>

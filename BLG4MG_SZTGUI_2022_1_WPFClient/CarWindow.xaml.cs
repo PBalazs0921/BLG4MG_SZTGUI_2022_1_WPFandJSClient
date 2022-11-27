@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace BLG4MG_SZTGUI_2022_1_WPFClient
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CarWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CarWindow : Window
     {
-        public MainWindow()
+        public CarWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            BrandWindow BrandMainWindow = new BrandWindow();
-            BrandMainWindow.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            CarWindow CarMainWindow = new CarWindow();
-            CarMainWindow.Show();   
         }
     }
 }
