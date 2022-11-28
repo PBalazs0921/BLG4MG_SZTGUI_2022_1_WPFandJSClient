@@ -35,5 +35,11 @@ namespace BLG4MG_SZTGUI_2022_1_WPFClient
             CarWindow CarMainWindow = new CarWindow();
             CarMainWindow.Show();   
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            CustomerWindow CustomerMainWindow = new CustomerWindow();
+            CustomerMainWindow.Show();
+        }
     }
 }
