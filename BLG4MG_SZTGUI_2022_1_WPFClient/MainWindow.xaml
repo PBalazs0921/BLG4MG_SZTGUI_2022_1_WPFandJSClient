@@ -14,6 +14,6 @@
 
         <Button Content="Car" HorizontalAlignment="Left" Height="65" Margin="207,175,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_1"/>
         <Button Content="Customer" HorizontalAlignment="Left" Height="64" Margin="477,176,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_2"/>
-        <Button Content="Rent" HorizontalAlignment="Left" Height="65" Margin="334,175,0,0" VerticalAlignment="Top" Width="88"/>
+        <Button Content="Rent" HorizontalAlignment="Left" Height="65" Margin="334,175,0,0" VerticalAlignment="Top" Width="88" Click="Button_Click_3"/>
     </Grid>
 </Window>

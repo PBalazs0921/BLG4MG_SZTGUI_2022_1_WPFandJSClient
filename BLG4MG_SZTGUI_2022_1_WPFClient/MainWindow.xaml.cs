@@ -41,5 +41,11 @@ namespace BLG4MG_SZTGUI_2022_1_WPFClient
             CustomerWindow CustomerMainWindow = new CustomerWindow();
             CustomerMainWindow.Show();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            RentWindow RentMainWindow = new RentWindow();
+            RentMainWindow.Show();
+        }
     }
 }
