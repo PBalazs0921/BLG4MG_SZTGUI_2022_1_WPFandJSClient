@@ -22,8 +22,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Column="1">
-            <Label Content="Name" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding SelectedCar.Brand}" Padding="10" Margin="0,0,0,30"/>
+            <Label Content="Brand" Background="LightBlue" Padding="10" />
+            <TextBox Text="{Binding SelectedCar.Model}" Padding="10" Margin="0,0,0,30"/>
             <Button Content="CreateCar" Command="{Binding CreateCar}"></Button>
             <Button Content="DeleteCar" Command="{Binding DeleteCar}"></Button>
             <Button Content="UpdateCar" Command="{Binding UpdateCar}"></Button>

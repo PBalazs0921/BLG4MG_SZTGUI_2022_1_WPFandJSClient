@@ -64,7 +64,7 @@ namespace BLG4MG_SZTGUI_2022_1_WPFClient
                 {
                     Cars.Add(new Car()
                     {
-                        Brand = selectedCar.Brand
+                        Model = SelectedCar.Model
                     });
                 }
                 );
