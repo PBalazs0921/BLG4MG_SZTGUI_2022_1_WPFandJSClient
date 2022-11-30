@@ -28,6 +28,8 @@ namespace BLG4MG_SZTGUI_2022_1_JSClient
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>

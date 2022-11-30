@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Car UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <h1>Car Rental</h1>
+
+    <!--CREATE-->
+    <div id="formdiv">
+        <label>Car ID</label>
+        <input type="text" id="id" />
+
+        <label>Model</label>
+        <input type="text" id="model" />
+
+        <label>BrandID</label>
+        <input type="text" id="brandID" />
+
+
+
+        <button type="button" onclick="create()">Add Car</button>
+    </div>
+
+    <!--UPDATE-->
+    <div id="updateformdiv">
+        <label>Car ID</label>
+        <input type="text" id="idToUpdate" />
+
+        <label>Model</label>
+        <input type="text" id="modelToUpdate" />
+
+        <label>BrandID</label>
+        <input type="text" id="brandIDToUpdate" />
+
+        <button type="button" onclick="update()">Update Car</button>
+    </div>
+
+
+    <!--DISPLAY-->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Model</th>
+                <th>Brand ID</th>
+
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

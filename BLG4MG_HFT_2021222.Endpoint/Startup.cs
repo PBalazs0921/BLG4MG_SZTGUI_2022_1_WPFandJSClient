@@ -59,6 +59,12 @@ namespace BLG4MG_HFT_2021222.Endpoint
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BLG4MG_HFT_2021222.Endpoint v1"));
             }
 
+            app.UseCors(x=>x
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("http://localhost:64140"));
+
             app.UseRouting();
 
             app.UseAuthorization();
